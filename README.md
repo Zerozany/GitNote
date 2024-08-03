@@ -116,11 +116,15 @@ git config --global --unset user.email
   ```sh
   git add 文件名称(支持通配符)
   ```
-- 将文件从`暂存区`移除
+- 将文件从`暂存区`移除(`工作区`保留)
   
   ```sh
   git rm --cached 文件名称
   git rm --cached -f 文件名称(强行移除文件)
+  ```
+- 将文件从`暂存区`和`工作区`移除  
+  ```sh
+  git rm 文件名称
   ```
 - 将`暂存区`内容提交至`仓库`
   
