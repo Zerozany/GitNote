@@ -20,6 +20,8 @@
   - [使用`GitHub`管理仓库](#使用github管理仓库)
     - [在`GitHub`上创建仓库](#在github上创建仓库)
     - [配置`SSH`密钥](#配置ssh密钥)
+    - [克隆远程仓库](#克隆远程仓库)
+    - [推送至远程仓库](#推送至远程仓库)
 
 
 ## 版本信息
@@ -194,9 +196,20 @@ git config --global --unset user.email
         User git
         IdentityFile ~/.ssh/ssh-keygen01 (私钥路径)
     ```
+### 克隆远程仓库
+1. 复制`SSH`路径  
+   
+    ![alt text](image-11.png)
+2. 克隆仓库(输入创建SSH密钥时所设置密码) 
+    
+    ![alt text](image-12.png)
+### 推送至远程仓库
+1. 输入`git push`使远程仓库与本地仓库同步
+   
+    ![alt text](image-13.png)
+2. 查看远程仓库
 
-
-
+    ![alt text](image-14.png)
 
 
 
