@@ -12,8 +12,10 @@
   - [仓库](#仓库)
     - [创建`Git`仓库](#创建git仓库)
   - [仓库的基本使用](#仓库的基本使用)
-    - [查看仓库状态](#查看仓库状态)
+    - [查看文件状态](#查看文件状态)
     - [文件管理](#文件管理)
+  - [仓库管理](#仓库管理)
+    - [查看提交记录](#查看提交记录)
 
 
 ## 版本信息
@@ -28,11 +30,11 @@
 > 以下配置以全局配置为例
 ### 添加用户ID
 ```sh
-git config --global user.name "Zero"
+git config --global user.name 用户ID
 ```
 ### 添加用户邮箱
 ```sh
-git config --global user.email ZZY990613@outlook.com
+git config --global user.email 用户邮箱
 ```
 ### 查看用户信息
 ```sh
@@ -40,8 +42,8 @@ git config --global --list
 ```
 ### 删除用户配置信息
 ```sh
-git config --global --unset user.name
-git config --global --unset user.email
+git config --global --unset user.name 
+git config --global --unset user.email 
 ```
 ## 仓库
 * `Git`仓库分区结构  
@@ -59,7 +61,7 @@ git config --global --unset user.email
 - `master`表示当前目录是`git`管理的仓库
 - `.git`为隐藏目录，都是`git`仓库的重要组成部分，禁止随意删除或修改
 ## 仓库的基本使用
-### 查看仓库状态
+### 查看文件状态
 - 查看`工作区`内容  
   
     ```sh
@@ -118,8 +120,16 @@ git config --global --unset user.email
   ```sh
   git commit -m "自定义提交日志"
   ```
-
-
+## 仓库管理
+### 查看提交记录
+- 详细模式
+  ```sh
+  git log
+  ```
+- 简介模式
+  ```sh
+  git log --oneline
+  ```
 
 
 
