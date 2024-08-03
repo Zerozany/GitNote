@@ -16,6 +16,10 @@
     - [文件管理](#文件管理)
   - [仓库管理](#仓库管理)
     - [查看提交记录](#查看提交记录)
+    - [版本回溯](#版本回溯)
+  - [使用`GitHub`管理仓库](#使用github管理仓库)
+    - [在`GitHub`上创建仓库](#在github上创建仓库)
+    - [配置`SSH`密钥](#配置ssh密钥)
 
 
 ## 版本信息
@@ -108,21 +112,25 @@ git config --global --unset user.email
     4. `A`表示文件新添加至`暂存区`，即该文件是新增文件，但尚未提交到版本库中
 ### 文件管理
 - 将文件添加至`暂存区`
+  
   ```sh
   git add 文件名称(支持通配符)
   ```
 - 将文件从`暂存区`移除
+  
   ```sh
   git rm --cached 文件名称
   git rm --cached -f 文件名称(强行移除文件)
   ```
 - 将`暂存区`内容提交至`仓库`
+  
   ```sh
   git commit -m "自定义提交日志"
   ```
 ## 仓库管理
 ### 查看提交记录
 - 详细模式
+  
   ```sh
   git log
   ```
@@ -130,13 +138,58 @@ git config --global --unset user.email
   ```sh
   git log --oneline
   ```
+### 版本回溯
+![alt text](image-5.png)
+- 查看历史操作记录
+  
+  ```sh
+  git reflog
+  ```
+- 指定版本进行回溯  
+  
+  ![alt text](image-6.png)
 
-
-
-
-
-
-
+## 使用`GitHub`管理仓库
+### 在`GitHub`上创建仓库
+1. 注册并打开[GitHub官网](https://github.com)
+2. 创建仓库  
+   
+   ![alt text](image-7.png)
+3. 初始化仓库信息
+   
+   ![alt text](image-8.png)
+### 配置`SSH`密钥
+1. 进入`.ssh`目录
+   
+   ```sh
+   cd ~
+   cd .ssh (不存在则创建后再进入`mkdir .ssh`)
+   ```
+2. 创建密钥
+   
+   ```sh
+   ssh-keygen -t rsa -b 4096
+   ```  
+   > -t ：指定密钥类型  
+   > -b ：指定密钥位数
+3. 配置密钥  
+   
+   ![alt text](image-9.png)
+   - 输入密钥ID
+   - 设置密钥密码
+   - 再次确认密码
+4. 查看生成密钥  
+   
+   ![alt text](image-10.png)
+   - ssh-keygen01 ：私钥文件(私密)
+   - ssh-keygen01.pub：公钥文件，上传至`GitHub`
+5. 在`.ssh`目录下创建`config`文件，并写入以下内容  
+    ```sh
+    Host github.com
+        HostName github.com
+        User git
+        IdentityFile ~/.ssh/ssh-keygen01 (私钥路径)
+    ```
 
 
 
